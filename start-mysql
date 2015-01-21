@@ -1,0 +1,9 @@
+#!/bin/bash
+/usr/sbin/mysqld &
+sleep 5
+echo "grant all on *.* to 'root'@'%'" | mysql --default-character-set=utf8
+echo "flush privileges" | mysql --default-character-set=utf8
+
+mysqladmin shutdown
+
+/usr/sbin/mysqld
