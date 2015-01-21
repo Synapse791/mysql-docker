@@ -8,4 +8,6 @@ RUN apt-get update && \
 
 ADD start-mysql /usr/local/bin/start-mysql
 
+VOLUME ["/var/lib/mysql", "/var/log/mysql"]
+
 CMD ["/usr/local/bin/start-mysql"]
